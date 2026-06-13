@@ -18,6 +18,7 @@ dataset/Spotify_Youtube.csv
 | --- | --- |
 | Y 變數分析 | `eda_response_variables.py`, `Member2_Report_Y_Variable.md` |
 | X 特徵分析與 PCA | `eda_features_pca.R`, `Member3_Report_X_Features.md` |
+| 變數篩選補充 | `variable_screening.R`, `Variable_Screening_Report.md` |
 | 主模型與診斷 | `modeling_diagnostics.R`, `Member4_5_Report_Modeling_Diagnostics.md` |
 | 補充探索模型 | `exploratory_model_extensions.R`, `Exploratory_Model_Extensions.md` |
 | 簡報摘要 | `Presentation_Takeaways.md` |
@@ -71,6 +72,12 @@ Danceability x official_video
 Rscript modeling_diagnostics.R
 ```
 
+變數篩選補充：
+
+```bash
+Rscript variable_screening.R
+```
+
 補充探索模型：
 
 ```bash
@@ -110,6 +117,13 @@ tables_exploratory/
 figures_exploratory/
 ```
 
+變數篩選表格與圖：
+
+```text
+tables_screening/
+figures_screening/
+```
+
 舊版模型圖已移至：
 
 ```text
@@ -121,6 +135,7 @@ figures_model/old/
 - 曝光時間 `ln_Days` 對 Spotify `Stream` 與 YouTube `Views` 都有顯著額外解釋力。
 - 媒體屬性 `official_video` 與 `Licensed` 對 YouTube `Views` 的解釋力明顯強於 Spotify `Stream`。
 - `Danceability x official_video` 的 interaction 在 Spotify `Stream` 不顯著，但在 YouTube `Views` 顯著。
+- 變數篩選顯示主模型 VIF 皆低於 5，沒有嚴重 multicollinearity；`Likes` 與 `Comments` 因 data leakage 風險不納入主模型。
 - 補充探索分析顯示，YouTube `Views` 可能存在較明顯的非線性與交互作用結構；Spotify `Stream` 則仍以主線 full model 較適合。
 
 ## 研究限制

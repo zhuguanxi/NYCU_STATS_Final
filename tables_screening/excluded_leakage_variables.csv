@@ -1,0 +1,3 @@
+"variable","reason"
+"Likes","YouTube engagement outcome; using it to explain Views would create data leakage."
+"Comments","YouTube engagement outcome; using it to explain Views would create data leakage."

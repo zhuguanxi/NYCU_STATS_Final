@@ -203,7 +203,27 @@ Spotify 的 interaction plot 要謹慎解讀，因為 formal test 不顯著。Yo
 
 最重要的實務結論是：在控制音訊特徵與曝光時間後，官方影片狀態與顯著較高的 YouTube views 有關。對 Spotify streams 而言，官方影片狀態在 Full model 中也顯著，但媒體屬性的核心重要性不如 YouTube 明顯。
 
-## 8. 補充探索分析
+## 8. 變數篩選補充
+
+本研究另建立 `variable_screening.R` 作為變數篩選補充，目的不是取代主模型，而是說明主模型變數選擇的合理性。
+
+篩選重點如下：
+
+- `Likes` 與 `Comments` 屬於 YouTube engagement outcomes，若用來解釋 `Views` 會造成 data leakage，因此不放入主迴歸模型。
+- Correlation screening 顯示 `Energy` 與 `Loudness` 的相關係數為 0.745，屬於較高相關；因此主模型保留較常用且較好解釋的 `Energy`，不把 `Loudness` 放入主線模型。
+- `Duration_ms` 與 `ln_Duration` 的相關係數為 0.717，因此主模型使用對數轉換後的 `ln_Duration`。
+- VIF screening 顯示主模型選定 predictors 的 VIF 皆低於 5，最高約為 3.03，沒有嚴重 multicollinearity。
+- Univariate screening 顯示 `ln_Days` 是 `ln_Stream` 的重要單變量 predictors 之一，而 `official_video` 與 `Licensed` 是 `ln_Views` 的重要單變量 predictors。
+
+因此，主模型採用 audio features、time control、media attributes 的 block-based nested model 是合理的。完整結果見：
+
+```text
+Variable_Screening_Report.md
+tables_screening/
+figures_screening/
+```
+
+## 9. 補充探索分析
 
 為了檢查是否存在更好的變數組合，本研究另建立 `exploratory_model_extensions.R` 作為補充分析。此分析不取代 proposal 主線模型，而是比較幾個合理延伸：
 
@@ -224,7 +244,7 @@ tables_exploratory/
 figures_exploratory/
 ```
 
-## 9. 研究限制
+## 10. 研究限制
 
 本研究是觀察性研究，因此係數應解讀為 association，而不是 causal effect。本研究不能證明官方影片或授權狀態會直接造成更高人氣。
 
@@ -234,12 +254,18 @@ figures_exploratory/
 
 Cook's distance 可以標示具影響力的觀測值，但本報告不自動刪除這些資料。是否移除需要有明確的資料品質或研究概念理由。
 
-## 10. 可重現性
+## 11. 可重現性
 
 執行主分析：
 
 ```bash
 Rscript modeling_diagnostics.R
+```
+
+執行變數篩選補充：
+
+```bash
+Rscript variable_screening.R
 ```
 
 程式讀取：
