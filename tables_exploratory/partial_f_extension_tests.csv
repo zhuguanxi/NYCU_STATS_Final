@@ -1,0 +1,7 @@
+"response","comparison","df_added","sumsq_added","F","p_value"
+"ln_Stream","E1 vs E2: add Album_type",2,547.826814973829,111.375962948218,8.54774845059864e-49
+"ln_Stream","E2 vs E3: add polynomial terms",3,294.666078564929,40.2034291243045,6.97236108491526e-26
+"ln_Stream","E3 vs E4: add selected interactions",2,150.116112605887,30.8256936149478,4.32352208083238e-14
+"ln_Views","E1 vs E2: add Album_type",2,339.855441052219,32.6015837207252,7.32473069377196e-15
+"ln_Views","E2 vs E3: add polynomial terms",3,1743.23369024557,113.399434263704,8.42573802253688e-73
+"ln_Views","E3 vs E4: add selected interactions",2,499.527366297756,48.9807618003691,6.0377989962093e-22

@@ -1,0 +1,11 @@
+"response","model_id","description","n","r_squared","adj_r_squared","AIC","BIC"
+"ln_Stream","E0_current_full","Current full model using YouTube time",17716,0.147105061775076,0.146526925907783,65612.1321847993,65721.0833133098
+"ln_Stream","E1_platform_time","Use platform-specific time variable",17716,0.105646853499061,0.105040615135055,66453.0104872591,66561.9616157697
+"ln_Stream","E2_album_type","Add Album_type",17716,0.116761651708625,0.116063084572527,66235.460899644,66359.9764750847
+"ln_Stream","E3_polynomial","Add squared terms for Danceability, Energy, ln_Duration",17716,0.122740099482506,0.121897438260402,66121.1374764635,66268.9997222993
+"ln_Stream","E4_interactions","Add selected interactions",17716,0.125785788839093,0.1248471546838,66063.5236773574,66226.9503701233
+"ln_Views","E0_current_full","Current full model using YouTube time",19631,0.321279493874533,0.320864331978646,88199.5263468355,88309.9144600332
+"ln_Views","E1_platform_time","Use platform-specific time variable",19631,0.321279493874533,0.320864331978646,88199.5263468355,88309.9144600332
+"ln_Views","E2_album_type","Add Album_type",19631,0.323528072197227,0.323045272085622,88138.381529825,88264.5393734795
+"ln_Views","E3_polynomial","Add squared terms for Danceability, Energy, ln_Duration",19631,0.335061792166929,0.334485442320747,87806.7904671098,87956.6029064495
+"ln_Views","E4_interactions","Add selected interactions",19631,0.338366804450893,0.337725785088523,87712.9731461262,87878.5553159228

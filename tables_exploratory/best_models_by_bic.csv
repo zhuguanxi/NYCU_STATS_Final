@@ -1,0 +1,3 @@
+"response","model_id","description","n","r_squared","adj_r_squared","AIC","BIC"
+"ln_Stream","E0_current_full","Current full model using YouTube time",17716,0.147105061775076,0.146526925907783,65612.1321847993,65721.0833133098
+"ln_Views","E4_interactions","Add selected interactions",19631,0.338366804450893,0.337725785088523,87712.9731461262,87878.5553159228
